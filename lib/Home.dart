@@ -1,10 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter1app/ButtonsApp.dart';
 import 'package:flutter1app/IconButton.dart';
 import 'package:flutter1app/ContainerW.dart';
 import 'package:flutter1app/Image.dart';
 import 'package:flutter1app/PaddingW.dart';
 import 'package:flutter1app/RowW.dart';
+import 'package:flutter1app/ColumnW2.dart';
 import 'package:flutter1app/elevatedButton.dart';
 import 'package:flutter1app/textButton.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -30,7 +32,7 @@ class Home extends StatelessWidget {
         backgroundColor: Colors.yellow,
       ),
       body: const Center(
-        child: RowW(),
+        child: ColumnW2(),
       ),
       bottomNavigationBar: BottomAppBar(
         shape: const CircularNotchedRectangle(),
@@ -39,13 +41,15 @@ class Home extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           // Add your onPressed code here!
-          Fluttertoast.showToast(
+          /*Fluttertoast.showToast(
               msg: "This is a Toast message",
               toastLength: Toast.LENGTH_SHORT,
               gravity: ToastGravity.BOTTOM,
               timeInSecForIosWeb: 1,
               textColor: Colors.white,
-              fontSize: 16.0);
+              fontSize: 16.0);*/
+          // to open another Activity
+          goToImagePage(context);
         },
         backgroundColor: Colors.yellow,
         child: const Icon(
@@ -57,3 +61,8 @@ class Home extends StatelessWidget {
     );
   }
 }
+
+void goToImagePage(BuildContext context) => {
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => const ButtonsApp()))
+    };
