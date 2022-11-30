@@ -6,11 +6,18 @@ class ImagePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: Center(
-        child: Image(
-            image: NetworkImage(
-                'https://thumbs.dreamstime.com/b/environment-earth-day-hands-trees-growing-seedlings-bokeh-green-background-female-hand-holding-tree-nature-field-gra-130247647.jpg')), // => AssetImage(url)
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: const [
+            Image(
+                image: NetworkImage(
+                    'https://firebasestorage.googleapis.com/v0/b/myfirebasechat-90c34.appspot.com/o/ChatPhotos%2Fehric5JNzjWTrU6KKeL9ATvckKa2%2FiBo4svcdTheMo5o72h5cSw1i8sn2%2F1669579852942.null?alt=media&token=3e8c0ad3-329c-4504-8df9-5ed39cba2fd5')),
+            Text("Hello Eslam Ghazy"),
+          ],
+        ), // => AssetImage(url)
       ),
     );
   }
