@@ -4,6 +4,7 @@ import 'package:flutter1app/IconButton.dart';
 import 'package:flutter1app/ContainerW.dart';
 import 'package:flutter1app/Image.dart';
 import 'package:flutter1app/PaddingW.dart';
+import 'package:flutter1app/RowW.dart';
 import 'package:flutter1app/elevatedButton.dart';
 import 'package:flutter1app/textButton.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -29,7 +30,7 @@ class Home extends StatelessWidget {
         backgroundColor: Colors.yellow,
       ),
       body: const Center(
-        child: PaddingW(),
+        child: RowW(),
       ),
       bottomNavigationBar: BottomAppBar(
         shape: const CircularNotchedRectangle(),

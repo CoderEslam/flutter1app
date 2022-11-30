@@ -8,7 +8,7 @@ class ImagePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       body: Center(
-        child: Image(image: AssetImage('assets/d.jpg')), // => NetworkImage(url)
+        child: Image(image: NetworkImage('https://thumbs.dreamstime.com/b/environment-earth-day-hands-trees-growing-seedlings-bokeh-green-background-female-hand-holding-tree-nature-field-gra-130247647.jpg')), // => NetworkImage(url)
       ),
     );
   }

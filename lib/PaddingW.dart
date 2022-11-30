@@ -10,7 +10,7 @@ class PaddingW extends StatelessWidget {
       body: Padding(
         padding: EdgeInsets.all(50.0),
         //we can's use margin here
-        child: Text("Hello Islam"),
+        child: Text("Hello Islam Ghazy"),
       ),
     );
   }
