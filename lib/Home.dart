@@ -1,6 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter1app/IconButton.dart';
+import 'package:flutter1app/ContainerW.dart';
 import 'package:flutter1app/Image.dart';
+import 'package:flutter1app/PaddingW.dart';
+import 'package:flutter1app/elevatedButton.dart';
+import 'package:flutter1app/textButton.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 // hot reload => update everything in same time
@@ -24,7 +29,7 @@ class Home extends StatelessWidget {
         backgroundColor: Colors.yellow,
       ),
       body: const Center(
-        child: ImagePage(),
+        child: PaddingW(),
       ),
       bottomNavigationBar: BottomAppBar(
         shape: const CircularNotchedRectangle(),
