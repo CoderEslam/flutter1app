@@ -7,6 +7,7 @@ import 'package:flutter1app/Image.dart';
 import 'package:flutter1app/PaddingW.dart';
 import 'package:flutter1app/RowW.dart';
 import 'package:flutter1app/ColumnW2.dart';
+import 'package:flutter1app/ExpandedW.dart';
 import 'package:flutter1app/elevatedButton.dart';
 import 'package:flutter1app/textButton.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -41,13 +42,6 @@ class Home extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           // Add your onPressed code here!
-          /*Fluttertoast.showToast(
-              msg: "This is a Toast message",
-              toastLength: Toast.LENGTH_SHORT,
-              gravity: ToastGravity.BOTTOM,
-              timeInSecForIosWeb: 1,
-              textColor: Colors.white,
-              fontSize: 16.0);*/
           // to open another Activity
           goToImagePage(context);
         },
@@ -65,4 +59,14 @@ class Home extends StatelessWidget {
 void goToImagePage(BuildContext context) => {
       Navigator.push(
           context, MaterialPageRoute(builder: (context) => const ButtonsApp()))
+    };
+
+void ShowToast() => {
+      Fluttertoast.showToast(
+          msg: "This is a Toast message",
+          toastLength: Toast.LENGTH_SHORT,
+          gravity: ToastGravity.BOTTOM,
+          timeInSecForIosWeb: 1,
+          textColor: Colors.white,
+          fontSize: 16.0)
     };

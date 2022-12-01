@@ -49,15 +49,25 @@ class ColumnW2 extends StatelessWidget {
                 )
               ],
             ),
-            Container(
-              color: Colors.deepPurple,
-              padding: const EdgeInsets.all(40.0),
-              child: const Text("Container"),
+            Center(
+              child: GestureDetector(
+                onTap: () {
+                  ShowToast("From Container 60");
+                },
+                child: Container(
+                  color: Colors.deepPurple,
+                  padding: const EdgeInsets.all(60.0),
+                  child: const Text("Container 60"),
+                ),
+              ),
             ),
-            Container(
-              color: Colors.deepPurple,
-              padding: const EdgeInsets.all(60.0),
-              child: const Text("Container"),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                color: Colors.deepPurple,
+                padding: const EdgeInsets.all(40.0),
+                child: const Text("Container 40"),
+              ),
             )
           ]),
     );
@@ -67,4 +77,14 @@ class ColumnW2 extends StatelessWidget {
 void goToImagePage(BuildContext context) => {
       Navigator.push(
           context, MaterialPageRoute(builder: (context) => const ImagePage()))
+    };
+
+void ShowToast(String text) => {
+      Fluttertoast.showToast(
+          msg: text.toString(),
+          toastLength: Toast.LENGTH_SHORT,
+          gravity: ToastGravity.BOTTOM,
+          timeInSecForIosWeb: 1,
+          textColor: Colors.white,
+          fontSize: 16.0)
     };

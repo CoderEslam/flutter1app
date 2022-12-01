@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter1app/ExpandedW.dart';
 
 void main() {
   runApp(const ButtonsApp());
@@ -52,14 +53,23 @@ class ButtonTypesGroup extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
-          ElevatedButton(onPressed: onPressed, child: const Text('Elevated')),
+          ElevatedButton(
+              onPressed: () {
+                goToPage(context);
+              }, child: const Text('Flex')),
 
           // Use an ElevatedButton with specific style to implement the
           // 'Filled' type.
           ElevatedButton(
             style: ElevatedButton.styleFrom(
-              foregroundColor: Theme.of(context).colorScheme.onPrimary,
-              backgroundColor: Theme.of(context).colorScheme.primary,
+              foregroundColor: Theme
+                  .of(context)
+                  .colorScheme
+                  .onPrimary,
+              backgroundColor: Theme
+                  .of(context)
+                  .colorScheme
+                  .primary,
             ).copyWith(elevation: ButtonStyleButton.allOrNull(0.0)),
             onPressed: onPressed,
             child: const Text('Filled'),
@@ -70,8 +80,14 @@ class ButtonTypesGroup extends StatelessWidget {
           ElevatedButton(
             style: ElevatedButton.styleFrom(
               foregroundColor:
-                  Theme.of(context).colorScheme.onSecondaryContainer,
-              backgroundColor: Theme.of(context).colorScheme.secondaryContainer,
+              Theme
+                  .of(context)
+                  .colorScheme
+                  .onSecondaryContainer,
+              backgroundColor: Theme
+                  .of(context)
+                  .colorScheme
+                  .secondaryContainer,
             ).copyWith(elevation: ButtonStyleButton.allOrNull(0.0)),
             onPressed: onPressed,
             child: const Text('Filled Tonal'),
@@ -85,3 +101,9 @@ class ButtonTypesGroup extends StatelessWidget {
     );
   }
 }
+
+void goToPage(BuildContext context) =>
+    {
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => const ExpandedW()))
+    };
