@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter1app/ExpandedW.dart';
 import 'package:flutter1app/IdCard.dart';
 import 'package:flutter1app/IdCardful.dart';
+import 'package:flutter1app/ListOfData.dart';
 
 void main() {
   runApp(const ButtonsApp());
@@ -82,8 +83,8 @@ class ButtonTypesGroup extends StatelessWidget {
                   Theme.of(context).colorScheme.onSecondaryContainer,
               backgroundColor: Theme.of(context).colorScheme.secondaryContainer,
             ).copyWith(elevation: ButtonStyleButton.allOrNull(0.0)),
-            onPressed: onPressed,
-            child: const Text('Filled Tonal'),
+            onPressed: () => {goToPageList(context)},
+            child: const Text('List Data'),
           ),
 
           OutlinedButton(onPressed: onPressed, child: const Text('Outlined')),
@@ -103,4 +104,9 @@ void goToPage(BuildContext context) => {
 void goToPageIdCard(BuildContext context) => {
       Navigator.push(
           context, MaterialPageRoute(builder: (context) => const IdCardful()))
+    };
+
+void goToPageList(BuildContext context) => {
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => const ListOfData()))
     };
