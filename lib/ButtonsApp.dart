@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter1app/ExpandedW.dart';
 import 'package:flutter1app/IdCard.dart';
+import 'package:flutter1app/IdCardful.dart';
 
 void main() {
   runApp(const ButtonsApp());
@@ -101,5 +102,5 @@ void goToPage(BuildContext context) => {
 
 void goToPageIdCard(BuildContext context) => {
       Navigator.push(
-          context, MaterialPageRoute(builder: (context) => const IdCard()))
+          context, MaterialPageRoute(builder: (context) => const IdCardful()))
     };
