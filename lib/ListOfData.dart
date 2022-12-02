@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter1app/ExpandedW.dart';
 import 'package:flutter1app/IdCard.dart';
 import 'package:flutter1app/IdCardful.dart';
+import 'package:flutter1app/ListOfData.dart';
+import 'package:flutter1app/QuoteCard.dart';
 import 'package:flutter1app/Quotes.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
@@ -24,33 +26,12 @@ class _ListOfDataState extends State<ListOfData> {
     Quote(text: "The trust is rarely pure and cover simple", author: "Ghazy"),
   ];
 
-  Widget quoteTemplate(quote) {
+  Widget quoteTemplateToast(quote) {
     return GestureDetector(
       onTap: () {
         ShowToast(quote.author);
       },
-      child: Card(
-        margin: const EdgeInsets.fromLTRB(16, 16, 16, 0),
-        child: Padding(
-          padding: const EdgeInsets.all(12.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Text(
-                quote.text,
-                style: TextStyle(fontSize: 18, color: Colors.grey[600]),
-              ),
-              const SizedBox(
-                height: 6,
-              ),
-              Text(
-                quote.author,
-                style: TextStyle(fontSize: 14, color: Colors.grey[800]),
-              )
-            ],
-          ),
-        ),
-      ),
+      child: QuoteCard(quote),
     );
   }
 
@@ -71,7 +52,7 @@ class _ListOfDataState extends State<ListOfData> {
           * arrow(=>) without return and bracts {} when it's need return data
           * arrow(=>) without or with return and bracts {} when it's not need return data
           * */
-          children: quotes.map((e) => quoteTemplate(e)).toList(),
+          children: quotes.map((e) => QuoteCard(e)).toList(),
         ),
       ),
     );
