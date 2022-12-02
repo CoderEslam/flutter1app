@@ -4,6 +4,7 @@ import 'package:flutter1app/IdCard.dart';
 import 'package:flutter1app/IdCardful.dart';
 import 'package:flutter1app/ListOfData.dart';
 import 'package:flutter1app/pages/Home.dart';
+import 'package:flutter1app/pages/mainWorldTime.dart';
 
 void main() {
   runApp(const ButtonsApp());
@@ -116,5 +117,5 @@ void goToPageList(BuildContext context) => {
 
 void goToPageHome(BuildContext context) => {
       Navigator.push(
-          context, MaterialPageRoute(builder: (context) => const Home()))
+          context, MaterialPageRoute(builder: (context) => const WorldTime()))
     };
