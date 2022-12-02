@@ -52,7 +52,7 @@ class _ListOfDataState extends State<ListOfData> {
           * arrow(=>) without return and bracts {} when it's need return data
           * arrow(=>) without or with return and bracts {} when it's not need return data
           * */
-          children: quotes.map((e) => QuoteCard(e)).toList(),
+          children: quotes.map((e) => quoteTemplateToast(e)).toList(),
         ),
       ),
     );
