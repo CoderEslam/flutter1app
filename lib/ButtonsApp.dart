@@ -3,6 +3,7 @@ import 'package:flutter1app/ExpandedW.dart';
 import 'package:flutter1app/IdCard.dart';
 import 'package:flutter1app/IdCardful.dart';
 import 'package:flutter1app/ListOfData.dart';
+import 'package:flutter1app/chart/mainChart.dart';
 import 'package:flutter1app/pages/Home.dart';
 import 'package:flutter1app/pages/mainWorldTime.dart';
 
@@ -68,8 +69,14 @@ class ButtonTypesGroup extends StatelessWidget {
           // 'Filled' type.
           ElevatedButton(
             style: ElevatedButton.styleFrom(
-              foregroundColor: Theme.of(context).colorScheme.onPrimary,
-              backgroundColor: Theme.of(context).colorScheme.primary,
+              foregroundColor: Theme
+                  .of(context)
+                  .colorScheme
+                  .onPrimary,
+              backgroundColor: Theme
+                  .of(context)
+                  .colorScheme
+                  .primary,
             ).copyWith(elevation: ButtonStyleButton.allOrNull(0.0)),
             onPressed: () {
               goToPageIdCard(context);
@@ -82,8 +89,14 @@ class ButtonTypesGroup extends StatelessWidget {
           ElevatedButton(
             style: ElevatedButton.styleFrom(
               foregroundColor:
-                  Theme.of(context).colorScheme.onSecondaryContainer,
-              backgroundColor: Theme.of(context).colorScheme.secondaryContainer,
+              Theme
+                  .of(context)
+                  .colorScheme
+                  .onSecondaryContainer,
+              backgroundColor: Theme
+                  .of(context)
+                  .colorScheme
+                  .secondaryContainer,
             ).copyWith(elevation: ButtonStyleButton.allOrNull(0.0)),
             onPressed: () => {goToPageList(context)},
             child: const Text('List Data'),
@@ -93,29 +106,41 @@ class ButtonTypesGroup extends StatelessWidget {
               onPressed: () => {goToPageHome(context)},
               child: const Text('World Time')),
 
-          TextButton(onPressed: onPressed, child: const Text('Text')),
+          TextButton(onPressed: () {
+            goToPageChart(context);
+          }, child: const Text('Chart')),
         ],
       ),
     );
   }
 }
 
-void goToPage(BuildContext context) => {
+void goToPage(BuildContext context) =>
+    {
       Navigator.push(
           context, MaterialPageRoute(builder: (context) => const ExpandedW()))
     };
 
-void goToPageIdCard(BuildContext context) => {
+void goToPageIdCard(BuildContext context) =>
+    {
       Navigator.push(
           context, MaterialPageRoute(builder: (context) => const IdCardful()))
     };
 
-void goToPageList(BuildContext context) => {
+void goToPageList(BuildContext context) =>
+    {
       Navigator.push(
           context, MaterialPageRoute(builder: (context) => const ListOfData()))
     };
 
-void goToPageHome(BuildContext context) => {
+void goToPageHome(BuildContext context) =>
+    {
       Navigator.push(
           context, MaterialPageRoute(builder: (context) => const WorldTime()))
+    };
+
+void goToPageChart(BuildContext context) =>
+    {
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => const MyApp()))
     };
