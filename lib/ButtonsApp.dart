@@ -3,6 +3,7 @@ import 'package:flutter1app/ExpandedW.dart';
 import 'package:flutter1app/IdCard.dart';
 import 'package:flutter1app/IdCardful.dart';
 import 'package:flutter1app/ListOfData.dart';
+import 'package:flutter1app/pages/Home.dart';
 
 void main() {
   runApp(const ButtonsApp());
@@ -87,7 +88,9 @@ class ButtonTypesGroup extends StatelessWidget {
             child: const Text('List Data'),
           ),
 
-          OutlinedButton(onPressed: onPressed, child: const Text('Outlined')),
+          OutlinedButton(
+              onPressed: () => {goToPageHome(context)},
+              child: const Text('World Time')),
 
           TextButton(onPressed: onPressed, child: const Text('Text')),
         ],
@@ -109,4 +112,9 @@ void goToPageIdCard(BuildContext context) => {
 void goToPageList(BuildContext context) => {
       Navigator.push(
           context, MaterialPageRoute(builder: (context) => const ListOfData()))
+    };
+
+void goToPageHome(BuildContext context) => {
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => const Home()))
     };
