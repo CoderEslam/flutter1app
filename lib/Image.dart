@@ -14,7 +14,7 @@ class ImagePage extends StatelessWidget {
           children: const [
             Image(
                 image: AssetImage('assets/r.jpg')),
-            Text("Hello Eslam Ghazy"),
+            Text("Hello Eslam Alaa Ghazy"),
           ],
         ), // => NetworkImage(url)
       ),

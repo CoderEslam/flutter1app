@@ -26,12 +26,12 @@ class _ListOfDataState extends State<ListOfData> {
     Quote(text: "The trust is rarely pure and cover simple", author: "Ghazy"),
   ];
 
-  Widget quoteTemplateToast(quote) {
+  Widget quoteTemplateToast({quote, delete}) {
     return GestureDetector(
       onTap: () {
         ShowToast(quote.author);
       },
-      child: QuoteCard(quote),
+      child: QuoteCard(quote: quote, delete: delete),
     );
   }
 
@@ -52,7 +52,15 @@ class _ListOfDataState extends State<ListOfData> {
           * arrow(=>) without return and bracts {} when it's need return data
           * arrow(=>) without or with return and bracts {} when it's not need return data
           * */
-          children: quotes.map((e) => quoteTemplateToast(e)).toList(),
+          children: quotes
+              .map((e) => QuoteCard(
+                  quote: e,
+                  delete: () {
+                    setState(() {
+                      quotes.remove(e);
+                    });
+                  }))
+              .toList(),
         ),
       ),
     );
