@@ -9,22 +9,12 @@ class ChooseLocation extends StatefulWidget {
 }
 
 class _ChooseLocationState extends State<ChooseLocation> {
-
-  @override
-  void initState() {
-    super.initState();
-    print("initState fun run");
-    getData();
-  }
-
-  int counter = 0;
-
-  // Asynchronous function
+/*  // Asynchronous function
   void getData() async {
     // simulate network request for username
-    /*
+    */ /*
     * await => wait this line of code until execute
-    * */
+    * */ /*
     String username = await Future.delayed(const Duration(seconds: 3), () {
       return "Eslam Ghazy";
     });
@@ -33,7 +23,7 @@ class _ChooseLocationState extends State<ChooseLocation> {
       return "Programming and playing";
     });
     print('$username and $bio');
-  }
+  }*/
 
   @override
   Widget build(BuildContext context) {
@@ -48,12 +38,8 @@ class _ChooseLocationState extends State<ChooseLocation> {
         ),
         body: ElevatedButton(
           onPressed: () {
-            setState(() {
-              //  setState => is rerun build function again
-              counter++;
-            });
           },
-          child: Text("counter is  $counter"),
+          child: Text("counter is"),
         ));
   }
 }

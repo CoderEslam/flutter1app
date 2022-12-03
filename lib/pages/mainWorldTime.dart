@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter1app/pages/ChooseLocation.dart';
 import 'package:flutter1app/pages/Home.dart';
@@ -26,7 +25,7 @@ class WorldTime extends StatefulWidget {
 class _WorldTimeState extends State<WorldTime> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(initialRoute: '/home', routes: {
+    return MaterialApp(initialRoute: '/', routes: {
       '/': (context) => const Loading(),
       '/home': (context) => const Home(),
       '/location': (context) => const ChooseLocation(),

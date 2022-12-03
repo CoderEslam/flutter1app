@@ -11,10 +11,10 @@ import 'package:flutter1app/chart/scatter_chart/scatter_chart_page.dart';
 import 'package:flutter1app/chart/utils/platform_info.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(const MyApp());
+void main() => runApp(const MyChartApp());
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class MyChartApp extends StatelessWidget {
+  const MyChartApp({super.key});
 
   @override
   Widget build(BuildContext context) {
