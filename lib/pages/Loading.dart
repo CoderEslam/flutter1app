@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter1app/services/world_time.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 class Loading extends StatefulWidget {
   const Loading({Key? key}) : super(key: key);
@@ -14,12 +15,13 @@ class _LoadingState extends State<Loading> {
 
   void setUpWordTime() async {
     WorldTime instance =
-        WorldTime(location: 'Egypt', flag: 'Egypt.png', url: 'Africa/Cairo');
+        WorldTime(location: 'Egypt', flag: 'egypt.png', url: 'Africa/Cairo');
     await instance.getTime();
     Navigator.pushReplacementNamed(context, '/home', arguments: {
       'location': instance.location,
       'flag': instance.flag,
       'time': instance.time,
+      'isDaytime': instance.isDaytime,
     });
     // print(instance.time);
     setState(() {
@@ -37,7 +39,13 @@ class _LoadingState extends State<Loading> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(padding: const EdgeInsets.all(50.0), child: Text(time)),
+      backgroundColor: Colors.blue[900],
+      body: const Center(
+        child: SpinKitCubeGrid(
+          color: Colors.white,
+          size: 80.0,
+        ),
+      ),
     );
   }
 }
